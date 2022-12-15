@@ -28,7 +28,8 @@
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -40,9 +41,6 @@
     "lint:fix": "eslint --fix --ext .js,.ts lib",
     "release": "standard-version --infile docs/CHANGELOG.md",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
-  },
-  "dependencies": {
-    "big.js": "^6.2.0"
   },
   "gitHead": "112ce0a10bd4a3cc514a9dd861f4e8ffd5671f2c",
   "devDependencies": {
@@ -56,11 +54,13 @@
     "commitizen": "^4.2.4",
     "core-js": "^3.21.1",
     "cross-env": "^7.0.3",
+    "element-plus": "^2.0.2",
     "eslint": "^8.17.0",
     "husky": "^8.0.1",
     "jest": "^28.1.1",
-    "element-plus": "^2.0.2",
     "jest-environment-jsdom": "^28.1.1",
+    "jest-location-mock": "^1.0.9",
+    "jest-mock-console": "^2.0.0",
     "lint-staged": "^13.0.1",
     "standard-version": "^9.5.0",
     "vitepress": "^1.0.0-alpha.2"

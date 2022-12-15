@@ -4,10 +4,12 @@ export { isElementInViewport, addEventListener, getClientRect, scrollLoad } from
 
 export { plus, minus, times, div } from './lib/math.js'
 
-export { queryString } from './lib/queryString.js'
+export { queryString, queryParams } from './lib/queryString.js'
 
 export * as Regex from './lib/regex.js'
 
-export { Storage } from './lib/storage.js'
+export { useStorage } from './lib/storage.js'
 
 export { isMobile, getTerminal, canWebp } from './lib/terminal.js'
+
+export { once } from './lib/event'

@@ -14,15 +14,17 @@ export default {
   // cacheDirectory: "/private/var/folders/zd/lr8xjq492r16z_02rgvgl0dm0000gn/T/jest_dx",
 
   // Automatically clear mock calls, instances, contexts and results before every test
+  // 自动清除 Mock
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
+  // 开启覆盖率
   // collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
 
-  // The directory where Jest should output its coverage files
+  // 指定生成覆盖率报告文件存放位置
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
@@ -135,7 +137,10 @@ export default {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  // 会在每个测试文件执行前先执行一次。预设一些测试场景的依赖，例如localstorage
+  setupFilesAfterEnv: [
+    './jest-setup.js'
+  ],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -143,7 +148,7 @@ export default {
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
-  // The test environment that will be used for testing
+  // 全局会自动拥有完整的浏览器标准 API, 所以 Jest 用这个库充当了浏览器环境的 Mock 实现
   testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment

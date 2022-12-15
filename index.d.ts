@@ -45,7 +45,7 @@ export declare function getTerminal(): Record<keyof typeof Agent, boolean>
 
 export declare function isMobile(): boolean
 
-export interface CupStatic {
+export interface RichStatic {
   isElementInViewport(el?: Element): boolean
   addEventListener(target:Element, type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): {remove: () => void}
   getClientRect(el:Element): Record<'x'|'y'|'top'|'left', number>
@@ -56,14 +56,13 @@ export interface CupStatic {
   minus(...args: number[]): number
   times(...args: number[]): number
   div(...args: number[]): number
-  Storage: {
-    getItem(key: string): any,
-    setItem(key: string, value: any, expire?: number)
-  }
+  useStorage(key: string, value: any, params: { expires: Date | Number, storage: WindowLocalStorage | WindowSessionStorage , interval: Number }): {value: {expires: number, data: any}}
   Regex: Record<'HTML_NOTE' | 'REPEAT_WORD' | 'CHINESE' | 'DATE' | 'HEX' | 'BASE64' | 'STRENGTH', RegExp>
   getTerminal(): Record<keyof typeof Agent, boolean>
   isMobile(): boolean
+  once(func: Function): Function
 }
 
-declare const cup: CupStatic
-export default cup
+declare const rich: RichStatic
+
+export default rich
